@@ -60,7 +60,12 @@
 
 ## 🔗 ERD
 
+<img width="1097" alt="image" src="https://github.com/DOSOPT-SOPKATHON-WEB4/Server/assets/48898994/7132da9c-eacf-453d-94c4-c7f2a8573222">
+
+
 ## 📄 API 명세서
+
+[API 명세서](https://snapdragon-desk-8fd.notion.site/aa15858aa903416983d6cf37d81301da?v=b60d53bc1d62431e9cfc179baedd565a&pvs=4)
 
 ## 🛠️ Tech
 | 사용기술 |     |
@@ -78,3 +83,6 @@
 
 
 ## 🔨 Architecture
+
+![image](https://github.com/DOSOPT-SOPKATHON-WEB4/Server/assets/48898994/8afd6551-b832-4954-9aed-4d13da8950ab)
+
