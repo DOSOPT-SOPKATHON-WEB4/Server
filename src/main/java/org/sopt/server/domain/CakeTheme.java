@@ -6,9 +6,9 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum CakeTheme {
-    YELLOW("Yellow"),
-    PURPLE("Purple"),
-    PINK("Pink");
+    RED("Red"),
+    GREEN("Green"),
+    BLUE("Blue");
 
     private final String theme;
 }
