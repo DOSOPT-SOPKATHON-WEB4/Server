@@ -2,6 +2,7 @@ package org.sopt.server.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.sopt.server.dto.request.CakeCreateRequestDto;
+import org.sopt.server.dto.response.CakeListResponseDto;
 import org.sopt.server.dto.response.CakeResponseDto;
 import org.sopt.server.global.response.ApiResponse;
 import org.sopt.server.global.response.SuccessType;
@@ -23,8 +24,13 @@ public class CakeController {
         return ApiResponse.success(SuccessType.CAKE_CREATE_SUCCESS);
     }
 
-    @GetMapping
-    public ApiResponse<CakeResponseDto> getCandleByCakeId(@RequestParam Long cakeId) {
+    @GetMapping("{cakeId}")
+    public ApiResponse<CakeResponseDto> getCandleByCakeId(@PathVariable Long cakeId) {
         return ApiResponse.success(SuccessType.GET_CANDLE_LIST_SUCCESS, cakeService.getCandleByCakeId(cakeId));
+    }
+
+    @GetMapping
+    public ApiResponse<CakeListResponseDto> getCakeList() {
+        return ApiResponse.success(SuccessType.GET_CAKE_LIST_SUCCESS, cakeService.getCakeList());
     }
 }

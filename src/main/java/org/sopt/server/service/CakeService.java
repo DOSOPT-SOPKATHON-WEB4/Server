@@ -5,6 +5,8 @@ import org.sopt.server.domain.Cake;
 import org.sopt.server.domain.CakeTheme;
 import org.sopt.server.domain.CandleCake;
 import org.sopt.server.dto.request.CakeCreateRequestDto;
+import org.sopt.server.dto.response.CakeDataResponseDto;
+import org.sopt.server.dto.response.CakeListResponseDto;
 import org.sopt.server.dto.response.CandleCakeResponseDto;
 import org.sopt.server.dto.response.CakeResponseDto;
 import org.sopt.server.global.exception.CommonException;
@@ -38,5 +40,14 @@ public class CakeService {
         List<CandleCake> candleList = cake.getCandleList();
         List<CandleCakeResponseDto> candleCakeResponseDtos = candleList.stream().map(cc -> CandleCakeResponseDto.of(cc.getCandle(), cake.getTitle())).toList();
         return CakeResponseDto.of(cake, candleCakeResponseDtos);
+    }
+
+    public CakeListResponseDto getCakeList() {
+        List<CakeDataResponseDto> dto =
+                cakeRepository.findAll()
+                        .stream()
+                        .map(cake -> CakeDataResponseDto.of(cake))
+                        .toList();
+        return CakeListResponseDto.of(dto);
     }
 }
