@@ -20,6 +20,7 @@ public class CandyController {
     private final CandyService candyService;
 
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public ApiResponse<?> findById(@RequestParam Long candleId,
                                    @RequestParam String cakeName) {
         return ApiResponse.success(SuccessType.GET_CANDLE_SUCCESS, candyService.findById(candleId, cakeName));
