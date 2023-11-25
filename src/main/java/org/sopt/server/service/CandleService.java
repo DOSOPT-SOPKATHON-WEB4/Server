@@ -14,6 +14,8 @@ import org.sopt.server.repository.CandleRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
@@ -28,6 +30,7 @@ public class CandleService {
                 Candle.builder()
                         .title(request.title())
                         .date(request.date())
+                        .deadLine(LocalDate.now().plusYears(1))
                         .feel(request.feel())
                         .body(request.body())
                         .build()
@@ -55,4 +58,6 @@ public class CandleService {
                 .orElseThrow(() -> new CommonException(ErrorType.NOT_FOUND_CANDLE_ERROR));
         candle.updateDate();
     }
+
+
 }
