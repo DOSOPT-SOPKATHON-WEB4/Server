@@ -5,6 +5,7 @@ import org.sopt.server.domain.Cake;
 import org.sopt.server.domain.Candle;
 import org.sopt.server.domain.CandleCake;
 import org.sopt.server.dto.request.CandleRequestDto;
+import org.sopt.server.dto.response.CandleResponseDto;
 import org.sopt.server.global.exception.CommonException;
 import org.sopt.server.global.response.ErrorType;
 import org.sopt.server.repository.CakeRepository;
@@ -40,5 +41,18 @@ public class CandleService {
                         .build()
                 );
         cake.getCandleList().add(candleCake);
+    }
+
+    public CandleResponseDto findById(Long candleId, String cakeName) {
+        Candle candle = candleRepository.findById(candleId)
+                .orElseThrow(() -> new CommonException(ErrorType.NOT_FOUND_CANDLE_ERROR));
+        return CandleResponseDto.of(candle, cakeName);
+    }
+
+    @Transactional
+    public void updateDate(Long candleId) {
+        Candle candle = candleRepository.findById(candleId)
+                .orElseThrow(() -> new CommonException(ErrorType.NOT_FOUND_CANDLE_ERROR));
+        candle.updateDate();
     }
 }
