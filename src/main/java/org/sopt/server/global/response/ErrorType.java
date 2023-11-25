@@ -13,6 +13,7 @@ public enum ErrorType {
     400 BAD REQUEST
      */
     NO_SEAT_SCHEDULE_ERROR(HttpStatus.BAD_REQUEST, "해당 상영 스케줄의 잔여 좌석이 부족합니다."),
+    DUPLICATE_CAKE_NAME_ERROR(HttpStatus.BAD_REQUEST, "이미 존재하는 케이크 이름입니다."),
 
     /*
      * 403 FORBIDDEN
