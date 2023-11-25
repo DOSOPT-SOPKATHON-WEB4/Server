@@ -31,6 +31,9 @@ public class Candle {
     @Column(nullable = false)
     private LocalDate date;
 
+    @Column(nullable = false)
+    private LocalDate deadLine;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Feel feel;
@@ -42,7 +45,7 @@ public class Candle {
     private List<CandleCake> cakeList = new ArrayList<>();
 
     public void updateDate() {
-        this.date = LocalDate.now();
+        this.deadLine = LocalDate.now();
     }
     @Builder
     public Candle(String title, LocalDate date, Feel feel, String body) {
