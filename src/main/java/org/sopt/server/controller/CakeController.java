@@ -5,9 +5,11 @@ import org.sopt.server.dto.request.CakeCreateRequestDto;
 import org.sopt.server.global.response.ApiResponse;
 import org.sopt.server.global.response.SuccessType;
 import org.sopt.server.service.CakeService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,6 +20,7 @@ public class CakeController {
     private final CakeService cakeService;
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ApiResponse<?> create(@RequestBody CakeCreateRequestDto request) {
         cakeService.create(request);
         return ApiResponse.success(SuccessType.CAKE_CREATE_SUCCESS);
