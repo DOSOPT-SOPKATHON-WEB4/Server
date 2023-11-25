@@ -18,7 +18,7 @@ public enum SuccessType {
      * 201 CREATED
      */
     CAKE_CREATE_SUCCESS(HttpStatus.CREATED, "케이크 생성에 성공했습니다."),
-    POST_CANDLE_SUCCESS(HttpStatus.CREATED,"춧불 생성에 성공했습니다."),
+    POST_CANDLE_SUCCESS(HttpStatus.CREATED,"촛불 생성에 성공했습니다."),
 
     /**
      * 204 NO CONTENT
