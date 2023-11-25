@@ -82,8 +82,7 @@
 ```
 
 ## 🔗 ERD
-
-<img width="1097" alt="image" src="https://github.com/DOSOPT-SOPKATHON-WEB4/Server/assets/48898994/7132da9c-eacf-453d-94c4-c7f2a8573222">
+<img width="1408" alt="스크린샷 2023-11-26 오전 1 19 19" src="https://github.com/DOSOPT-SOPKATHON-WEB4/Server/assets/75068759/b65b4c7f-2629-4c67-80e7-6ed7f5b608d6">
 
 
 ## 📄 API 명세서
@@ -101,7 +100,7 @@
 | Java version | Java 17 |
 
 
-## 🛠️ 실행 방법
+## 🛠️ 실행 방법 
 ./gradlew clean build -x test
 
 
