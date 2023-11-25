@@ -10,9 +10,9 @@ import java.util.List;
 public record CakeResponseDto(
         Long cakeId,
         String cakeTitle,
-        List<CakeCandleResponseDto> candleList
+        List<CandleCakeResponseDto> candleList
 ) {
-    public static CakeResponseDto of(Cake cake, List<CakeCandleResponseDto> dto) {
+    public static CakeResponseDto of(Cake cake, List<CandleCakeResponseDto> dto) {
         return new CakeResponseDto(
                 cake.getId(),
                 cake.getTitle(),

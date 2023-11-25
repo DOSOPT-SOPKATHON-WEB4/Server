@@ -9,14 +9,14 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public record CakeCandleResponseDto(
+public record CandleCakeResponseDto(
         Long id,
         Feel feel,
         Long dday,
         LocalDate deadLine
 ) {
-    public static CakeCandleResponseDto of(Candle candle, String tag) {
-        return new CakeCandleResponseDto(
+    public static CandleCakeResponseDto of(Candle candle, String tag) {
+        return new CandleCakeResponseDto(
                 candle.getId(),
                 candle.getFeel(),
                 ChronoUnit.DAYS.between(candle.getDate(), LocalDate.now()),

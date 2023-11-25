@@ -5,7 +5,7 @@ import org.sopt.server.domain.Cake;
 import org.sopt.server.domain.CakeTheme;
 import org.sopt.server.domain.CandleCake;
 import org.sopt.server.dto.request.CakeCreateRequestDto;
-import org.sopt.server.dto.response.CakeCandleResponseDto;
+import org.sopt.server.dto.response.CandleCakeResponseDto;
 import org.sopt.server.dto.response.CakeResponseDto;
 import org.sopt.server.global.exception.CommonException;
 import org.sopt.server.global.response.ErrorType;
@@ -36,7 +36,7 @@ public class CakeService {
     public CakeResponseDto getCandleByCakeId(Long cakeId) {
         Cake cake = cakeRepository.findById(cakeId).orElseThrow(() -> new CommonException(ErrorType.NOT_FOUND_CAKE_ERROR));
         List<CandleCake> candleList = cake.getCandleList();
-        List<CakeCandleResponseDto> cakeCandleResponseDtos = candleList.stream().map(cc -> CakeCandleResponseDto.of(cc.getCandle(), cake.getTitle())).toList();
-        return CakeResponseDto.of(cake, cakeCandleResponseDtos);
+        List<CandleCakeResponseDto> candleCakeResponseDtos = candleList.stream().map(cc -> CandleCakeResponseDto.of(cc.getCandle(), cake.getTitle())).toList();
+        return CakeResponseDto.of(cake, candleCakeResponseDtos);
     }
 }
