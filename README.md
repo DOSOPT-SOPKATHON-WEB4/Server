@@ -115,3 +115,12 @@ java -jar Server-0.0.1-SNAPSHOT.jar
 
 ![image](https://github.com/DOSOPT-SOPKATHON-WEB4/Server/assets/48898994/8afd6551-b832-4954-9aed-4d13da8950ab)
 
+## 🔨 추억모음집
+<img width="500" alt="스크린샷 2023-11-26 오전 7 45 40" src="https://github.com/DOSOPT-SOPKATHON-WEB4/Server/assets/75068759/ac5187bc-e3df-4bec-bc98-75c204106b63">
+
+<br>
+
+[추억 어쩌구](https://snapdragon-desk-8fd.notion.site/cec6add01bf44e0eb56bec103d5b44d7?v=ce00e6e0c4484c29b37fad0cb81373dd&pvs=4)
+
+
+
