@@ -23,6 +23,8 @@ public enum ErrorType {
     /**
      * 404 NOT FOUND
      */
+    NOT_FOUND_MOVIE_ERROR(HttpStatus.NOT_FOUND, "존재하지 않는 영화입니다"),
+    NOT_FOUND_CANDLE_ERROR(HttpStatus.NOT_FOUND, "존재하지 않는 초입니다"),
     NOT_FOUND_CAKE_ERROR(HttpStatus.NOT_FOUND, "존재하지 않는 케이크입니다"),
 
     /**

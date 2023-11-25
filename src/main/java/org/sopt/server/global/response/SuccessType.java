@@ -12,6 +12,7 @@ public enum SuccessType {
     /**
      * 200 OK
      */
+    GET_CANDLE_SUCCESS(HttpStatus.OK, "캔들 조회에 성공했습니다."),
     CAKE_CREATE_SUCCESS(HttpStatus.OK, "케이크 생성에 성공했습니다."),
 
     /**
