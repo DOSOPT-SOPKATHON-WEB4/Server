@@ -4,10 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.sopt.server.global.response.ApiResponse;
 import org.sopt.server.global.response.SuccessType;
 import org.sopt.server.service.CandyService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -24,6 +26,7 @@ public class CandyController {
     }
 
     @PatchMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ApiResponse<?> updateDate(@RequestParam Long candleId) {
         candyService.updateDate(candleId);
         return ApiResponse.success(SuccessType.UPDATE_CANDLE_DATE_SUCCESS);
