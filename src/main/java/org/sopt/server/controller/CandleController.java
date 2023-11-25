@@ -21,4 +21,18 @@ public class CandleController {
         candleService.createCandle(request);
         return ApiResponse.success(SuccessType.POST_CANDLE_SUCCESS);
     }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponse<?> findById(@RequestParam Long candleId,
+                                   @RequestParam String cakeName) {
+        return ApiResponse.success(SuccessType.GET_CANDLE_SUCCESS, candleService.findById(candleId, cakeName));
+    }
+
+    @PatchMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ApiResponse<?> updateDate(@RequestParam Long candleId) {
+        candleService.updateDate(candleId);
+        return ApiResponse.success(SuccessType.UPDATE_CANDLE_DATE_SUCCESS);
+    }
 }

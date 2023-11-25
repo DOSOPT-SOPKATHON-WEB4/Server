@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface CakeRepository extends JpaRepository<Cake, Long> {
     Optional<Cake> findCakeByTitle(String title);
+    boolean existsCakeByTitle(String title);
 }
