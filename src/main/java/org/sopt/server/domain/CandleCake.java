@@ -13,6 +13,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
 @Getter
 @Builder
@@ -31,4 +33,10 @@ public class CandleCake {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cake_id", nullable = false)
     private Cake cake;
+
+    @Builder
+    public CandleCake(Cake cake, Candle candle) {
+        this.cake = cake;
+        this.candle = candle;
+    }
 }

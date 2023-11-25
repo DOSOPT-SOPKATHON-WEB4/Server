@@ -8,10 +8,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -28,7 +31,7 @@ public class Candle {
     private String title;
 
     @Column(nullable = false)
-    private LocalDateTime date;
+    private LocalDate date;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -37,6 +40,11 @@ public class Candle {
     @Column(nullable = false)
     private String body;
 
-    @OneToMany(mappedBy = "candle")
-    private List<CandleCake> cakeList = new ArrayList<>();
+    @Builder
+    public Candle(String title, LocalDate date, Feel feel, String body) {
+        this.title = title;
+        this.date = date;
+        this.feel = feel;
+        this.body = body;
+    }
 }
