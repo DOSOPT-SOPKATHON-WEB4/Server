@@ -20,10 +20,11 @@ public enum SuccessType {
      */
     POST_CANDLE_SUCCESS(HttpStatus.CREATED,"춧불 생성에 성공했습니다.");
 
-
     /**
      * 204 NO CONTENT
      */
+
+    UPDATE_CANDLE_DATE_SUCCESS(HttpStatus.NO_CONTENT, "캔들 수명 연장에 성공했습니다.");
 
 
     private final HttpStatus httpStatus;

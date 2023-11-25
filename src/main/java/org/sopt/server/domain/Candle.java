@@ -8,9 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AccessLevel;
@@ -40,6 +38,12 @@ public class Candle {
     @Column(nullable = false)
     private String body;
 
+    @OneToMany(mappedBy = "candle")
+    private List<CandleCake> cakeList = new ArrayList<>();
+
+    public void updateDate() {
+        this.date = LocalDate.now();
+    }
     @Builder
     public Candle(String title, LocalDate date, Feel feel, String body) {
         this.title = title;
