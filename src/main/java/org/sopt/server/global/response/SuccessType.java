@@ -14,6 +14,7 @@ public enum SuccessType {
      */
     GET_CANDLE_SUCCESS(HttpStatus.OK, "캔들 조회에 성공했습니다."),
     GET_CANDLE_LIST_SUCCESS(HttpStatus.OK, "케이크별 촛불 조회에 성공했습니다."),
+    GET_CAKE_LIST_SUCCESS(HttpStatus.OK, "케이크 리스트 조회에 성공했습니다."),
 
 
     /**
