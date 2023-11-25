@@ -48,9 +48,10 @@ public class Candle {
         this.deadLine = LocalDate.now();
     }
     @Builder
-    public Candle(String title, LocalDate date, Feel feel, String body) {
+    public Candle(String title, LocalDate date, LocalDate deadLine, Feel feel, String body) {
         this.title = title;
         this.date = date;
+        this.deadLine = deadLine;
         this.feel = feel;
         this.body = body;
     }
