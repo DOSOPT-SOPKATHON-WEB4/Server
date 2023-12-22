@@ -33,4 +33,5 @@ public class CakeController {
     public ApiResponse<CakeListResponseDto> getCakeList() {
         return ApiResponse.success(SuccessType.GET_CAKE_LIST_SUCCESS, cakeService.getCakeList());
     }
+
 }

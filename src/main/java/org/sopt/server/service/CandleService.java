@@ -59,5 +59,4 @@ public class CandleService {
         candle.updateDate();
     }
 
-
 }

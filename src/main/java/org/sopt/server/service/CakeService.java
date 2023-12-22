@@ -50,4 +50,5 @@ public class CakeService {
                         .toList();
         return CakeListResponseDto.of(dto);
     }
+
 }
